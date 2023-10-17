@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    section.contact
+      h1 Contact Us
+      p We're here to assist you. If you have any questions, inquiries, or feedback, please don't hesitate to get in touch with us.
+      div.contact-details
+        div.contact-info
+          h2 Contact Information
+          p Phone: +9123456789
+          p Email: flavorscape@restaurant.com
+          p Address: 123 Culinary Avenue,hyderabad.
+        div.contact-form
+          h2 Send us a Message
+          form(action="mailto:21eg107b56@gmail.com", method="post")
+            div.form-group
+              label(for="name") Name:
+              input#name.form-control(type="text", name="name", required)
+            div.form-group
+              label(for="email") Email:
+              input#email.form-control(type="email", name="email", required)
+            div.form-group
+              label(for="message") Message:
+              textarea#message.form-control(name="message", rows="4", required)
+            button.btn.btn-primary(type="submit") Send Message

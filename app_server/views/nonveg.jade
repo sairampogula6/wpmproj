@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  .row.page-header
+    .col-lg-12
+      h1 Non-veg Menu
+
+  .row
+    .col-xs-12.col-md-9
+      .row
+        each menuItem in menuItems
+          .col-xs-12.col-sm-6.menu-item
+            .panel.panel-primary
+              .panel-heading
+                h2.panel-title= menuItem.name
+                span.badge.pull-right.badge-default Rs.#{menuItem.price}
+              .panel-body
+                img.menu-item-image(src=menuItem.image, alt=menuItem.name)
+                p.menu-item-description= menuItem.description
+                p.rating
+                   - var rating = menuItem.rating;
+              each star in [1, 2, 3, 4, 5]
+                if star <= rating
+                  span.glyphicon.glyphicon-star
+                else
+                  span.glyphicon.glyphicon-star-empty
+                  
+    .col-xs-12.col-sm-3
+      p.lead
+        | Embark on a savory adventure with our non-vegetarian cuisine at Flavorscape Kitchen, where succulent cuts of meat are artfully prepared and infused with a symphony of spices, offering a tantalizing journey for meat enthusiasts. From grilled delights to exquisite curries, our non-veg offerings promise an unforgettable dining experience.      
+
+      
